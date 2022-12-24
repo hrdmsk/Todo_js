@@ -45,19 +45,22 @@
         <div class="add md-3">
             <div class="fome-group">
                 <label for="input">task</label>
-                <input type="text" class="fome-control" id="input" placeholder="家に帰る"/>
+                <input type="text" class="fome-control" id="inputTodo" placeholder="家に帰る"/>
             </div>
-            <button id="add" class="btn btn-primary">ADD</button>
+            <button id="addBtn" class="btn btn-primary">ADD</button>
         </div>
 
-        <table class="table" id="todo">
+        <table class="table" id="todoList">
             <thead>
-                <th>ID</th>
-                <th>task</th>
-                <th>progress</th>
+                <tr>
+                    <th>ID</th>
+                    <th>task</th>
+                    <th>progress</th>
+                </tr>
             </thead>
+            <tbody id="todoLists"></tbody>
         </table>
-        
+
     </div>
 
     <div class="container">
@@ -68,6 +71,7 @@
             </svg>
         </a>
     </div>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
