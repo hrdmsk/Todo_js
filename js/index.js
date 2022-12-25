@@ -3,6 +3,7 @@
 const inputTodo = document.getElementById("inputTodo");
 const todoLists = document.getElementById("todoLists");
 const addBtn = document.getElementById("addBtn");
+const allDel = document.getElementById("allDel")
 
 // デフォルト値1
 let currentNum = 1;
@@ -24,6 +25,11 @@ addBtn.addEventListener("click", () => {
 
   inputTodo.value = "";
   currentNum++;
+});
+
+allDel.addEventListener("click",() =>{
+  let todos = [];
+  createListView();
 });
 
 const createListView = () => {
