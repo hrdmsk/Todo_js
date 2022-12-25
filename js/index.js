@@ -13,24 +13,21 @@ addBtn.addEventListener("click", () => {
     alert("タスクを入力してください");
     return;
   }
-
   // 先ほど用意したタスクを保存する箱に保存
   todos.push({
     id: currentNum,
     title: inputTodo.value
   });
 
-  createListView();
-
-  inputTodo.value = "";
+  createListView="";
   currentNum++;
 });
 
-const createListView = () => {
   // タスクを描画するときにtbodyの中に子要素が一つでもあれば一つになるまで削除する
-  while (todoLists.firstChild) {
-    todoLists.removeChild(todoLists.firstChild);
-  }
+const createListView=()=>{
+    while(todoLists.firstChild){
+      todoLists.removeChild(todoLists.firstChild);
+    }
 
   todos.forEach((todo) => {
     // // tr要素の生成
