@@ -28,7 +28,7 @@ addBtn.addEventListener("click", () => {
 });
 
 allDel.addEventListener("click",() =>{
-  let todos = [];
+  todos.length = 0;
   createListView();
 });
 
