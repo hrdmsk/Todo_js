@@ -19,6 +19,8 @@ addBtn.addEventListener("click", () => {
     title: inputTodo.value
   });
 
+  createListView();
+
   createListView="";
   currentNum++;
 });
