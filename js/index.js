@@ -7,6 +7,7 @@ const addBtn = document.getElementById("addBtn");
 // デフォルト値1
 let currentNum = 1;
 let todos = [];
+const DB = localStorage
 
 addBtn.addEventListener("click", () => {
   if (inputTodo.value === "") {
@@ -14,7 +15,6 @@ addBtn.addEventListener("click", () => {
     return;
   }
 
-  // 先ほど用意したタスクを保存する箱に保存
   todos.push({
     id: currentNum,
     title: inputTodo.value
