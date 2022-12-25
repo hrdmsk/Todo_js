@@ -4,9 +4,8 @@ const inputTodo = document.getElementById("inputTodo");
 const todoLists = document.getElementById("todoLists");
 const addBtn = document.getElementById("addBtn");
 
-// デフォルト値で1を設定
+// デフォルト値1
 let currentNum = 1;
-// todoを保存する箱
 let todos = [];
 
 addBtn.addEventListener("click", () => {
