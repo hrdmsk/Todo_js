@@ -56,3 +56,12 @@ const createListView = () => {
     todoLists.appendChild(todoItem);
   });
 };
+
+function saveDB(){
+  localStorage.setItem('ID',currentNum)
+  localStorage.setItem('TASK',inputTodo.value)
+}
+function DBclear(){
+  localStorage.removeItem('ID',currentNum)
+  localStorage.removeItem('TASK',inputTodo.value)
+}
