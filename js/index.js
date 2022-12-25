@@ -6,6 +6,7 @@ const addBtn = document.getElementById("addBtn");
 
 // デフォルト値で1を設定
 let currentNum = 1;
+// todoを保存する箱
 let todos = [];
 
 addBtn.addEventListener("click", () => {
@@ -13,6 +14,7 @@ addBtn.addEventListener("click", () => {
     alert("タスクを入力してください");
     return;
   }
+
   // 先ほど用意したタスクを保存する箱に保存
   todos.push({
     id: currentNum,
@@ -21,15 +23,15 @@ addBtn.addEventListener("click", () => {
 
   createListView();
 
-  createListView="";
+  inputTodo.value = "";
   currentNum++;
 });
 
+const createListView = () => {
   // タスクを描画するときにtbodyの中に子要素が一つでもあれば一つになるまで削除する
-const createListView=()=>{
-    while(todoLists.firstChild){
-      todoLists.removeChild(todoLists.firstChild);
-    }
+  while (todoLists.firstChild) {
+    todoLists.removeChild(todoLists.firstChild);
+  }
 
   todos.forEach((todo) => {
     // // tr要素の生成
@@ -45,7 +47,7 @@ const createListView=()=>{
 
     todoId.textContent = todo.id;
     todoTitle.textContent = todo.title;
-    deleteBtn.textContent = "delete";
+    deleteBtn.textContent = "削除";
     deleteBtn.classList.add("btn", "btn-secondary");
     todoDelete.appendChild(deleteBtn);
 
