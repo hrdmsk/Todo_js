@@ -12,13 +12,12 @@ var now = new Date();
 var YY = now.getFullYear;
 var MM = now.getMonth;
 var DD = now.getDay;
-var hh = now.getHours;
-var mm = now.getMinutes;
 var ss = now.getSeconds;
 
-let nowTime = hh + ':' + mm;
-
 addBtn.addEventListener("click", () => {
+  var hh = now.getHours;
+  var mm = now.getMinutes;
+  let nowTime = hh + ':' + mm;
 
   times.push({
     id: currentNum,
