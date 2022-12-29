@@ -17,18 +17,17 @@ var mm = now.getMinutes
 var ss = now.getSeconds
 
 addBtn.addEventListener("click", () => {
-  }
 
-  times.push({
+  todos.push({
     id: currentNum,
-    title: 
+    title: inputTodo.value
   });
 
   createListView();
 
   inputTodo.value = "";
   currentNum++;
-);
+});
 
 allDel.addEventListener("click",() =>{
   todos.length = 0;
