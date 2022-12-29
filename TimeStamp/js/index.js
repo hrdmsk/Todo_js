@@ -1,6 +1,6 @@
 "use strict";
 
-const todoLists = document.getElementById("timeLists");
+const timeLists = document.getElementById("timeLists");
 const addBtn = document.getElementById("addBtn");
 const allDel = document.getElementById("allDel");
 
@@ -20,7 +20,7 @@ let nowTime = hh + ':' + mm;
 
 addBtn.addEventListener("click", () => {
 
-  todos.push({
+  times.push({
     id: currentNum,
     title: nowTime
   });
@@ -31,37 +31,33 @@ addBtn.addEventListener("click", () => {
 });
 
 allDel.addEventListener("click",() =>{
-  todos.length = 0;
+  times.length = 0;
   createListView();
 });
 
 const createListView = () => {
   // タスクを描画するときにtbodyの中に子要素が一つでもあれば一つになるまで削除する
-  while (todoLists.firstChild) {
-    todoLists.removeChild(todoLists.firstChild);
+  while (timeLists.firstChild) {
+    timeLists.removeChild(timeLists.firstChild);
   }
 
-  todos.forEach((todo) => {
+  times.forEach((time) => {
     // // tr要素の生成
-    let todoItem = document.createElement("tr");
-    // todoのIDを表示するthの生成
-    const todoId = document.createElement("th");
-    // todoのタイトルを表示するthの生成
-    const todoTitle = document.createElement("th");
-    // 削除ボタンを表示するthの生成
-    const todoDelete = document.createElement("th");
-    // 削除ボタンの生成
-    const deleteBtn = document.createElement("button");
+    let timeItem = document.createElement("tr");
+    // timeのIDを表示するthの生成
+    const timeId = document.createElement("th");
+    // timeのタイトルを表示するthの生成
+    const timeTitle = document.createElement("th");
 
-    todoId.textContent = todo.id;
-    todoTitle.textContent = todo.title;
+    Id.textContent = time.id;
+    timeTitle.textContent = time.title;
     deleteBtn.textContent = "削除";
     deleteBtn.classList.add("btn", "btn-secondary");
-    todoDelete.appendChild(deleteBtn);
+    timeDelete.appendChild(deleteBtn);
 
-    todoItem.appendChild(todoId);
-    todoItem.appendChild(todoTitle);
-    todoItem.appendChild(todoDelete);
-    todoLists.appendChild(todoItem);
+    timeItem.appendChild(timeId);
+    timeItem.appendChild(timeTitle);
+    timeItem.appendChild(timeDelete);
+    timeLists.appendChild(timeItem);
   });
 };
