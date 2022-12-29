@@ -1,23 +1,17 @@
 "use strict";
 
-const timeLists = document.getElementById("timeLists");
+const timeStamp = document.getElementById("timeStamp");
 const addBtn = document.getElementById("addBtn");
 const allDel = document.getElementById("allDel");
 
 let currentNum = 1;
 let times = [];
-const DB = localStorage;
 var now = new Date();
 
-var YY = now.getFullYear;
-var MM = now.getMonth;
-var DD = now.getDay;
-var ss = now.getSeconds;
-
 addBtn.addEventListener("click", () => {
-  var hh = now.getHours;
-  var mm = now.getMinutes;
-  let nowTime = hh + ':' + mm;
+  var hh = now.getHours();
+  var mm = now.getMinutes();
+  var nowTime = hh + ':' + mm;
 
   times.push({
     id: currentNum,
@@ -26,6 +20,7 @@ addBtn.addEventListener("click", () => {
 
   createListView();
 
+  nowTime = "";
   currentNum++;
 });
 
@@ -36,8 +31,8 @@ allDel.addEventListener("click",() =>{
 
 const createListView = () => {
   // タスクを描画するときにtbodyの中に子要素が一つでもあれば一つになるまで削除する
-  while (timeLists.firstChild) {
-    timeLists.removeChild(timeLists.firstChild);
+  while (timeStamp.firstChild) {
+    timeStamp.removeChild(timeStamp.firstChild);
   }
 
   times.forEach((time) => {
@@ -48,15 +43,11 @@ const createListView = () => {
     // timeのタイトルを表示するthの生成
     const timeTitle = document.createElement("th");
 
-    Id.textContent = time.id;
+    timeId.textContent = time.id;
     timeTitle.textContent = time.title;
-    deleteBtn.textContent = "削除";
-    deleteBtn.classList.add("btn", "btn-secondary");
-    timeDelete.appendChild(deleteBtn);
 
     timeItem.appendChild(timeId);
     timeItem.appendChild(timeTitle);
-    timeItem.appendChild(timeDelete);
-    timeLists.appendChild(timeItem);
+    timeStamp.appendChild(timeItem);
   });
 };
