@@ -27,7 +27,6 @@ addBtn.addEventListener("click", () => {
 
   createListView();
 
-  inputTodo.value = "";
   currentNum++;
 });
 
