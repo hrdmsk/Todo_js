@@ -2,25 +2,27 @@
 
 const todoLists = document.getElementById("timeLists");
 const addBtn = document.getElementById("addBtn");
-const allDel = document.getElementById("allDel")
+const allDel = document.getElementById("allDel");
 
 let currentNum = 1;
 let times = [];
-const DB = localStorage
-var now = new Date()
+const DB = localStorage;
+var now = new Date();
 
-var YY = now.getFullYear
-var MM = now.getMonth
-var DD = now.getDay
-var hh = now.getHours
-var mm = now.getMinutes
-var ss = now.getSeconds
+var YY = now.getFullYear;
+var MM = now.getMonth;
+var DD = now.getDay;
+var hh = now.getHours;
+var mm = now.getMinutes;
+var ss = now.getSeconds;
+
+let nowTime = hh + ':' + mm;
 
 addBtn.addEventListener("click", () => {
 
   todos.push({
     id: currentNum,
-    title: inputTodo.value
+    title: nowTime
   });
 
   createListView();
