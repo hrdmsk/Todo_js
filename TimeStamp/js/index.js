@@ -31,17 +31,13 @@ allDel.addEventListener("click",() =>{
 });
 
 const createListView = () => {
-  // タスクを描画するときにtbodyの中に子要素が一つでもあれば一つになるまで削除する
   while (timeStamp.firstChild) {
     timeStamp.removeChild(timeStamp.firstChild);
   }
 
   times.forEach((time) => {
-    // // tr要素の生成
     let timeItem = document.createElement("tr");
-    // timeのIDを表示するthの生成
     const timeId = document.createElement("th");
-    // timeのタイトルを表示するthの生成
     const timeTitle = document.createElement("th");
 
     timeId.textContent = time.id;
