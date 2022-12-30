@@ -6,9 +6,10 @@ const allDel = document.getElementById("allDel");
 
 let currentNum = 1;
 let times = [];
-var now = new Date();
+
 
 addBtn.addEventListener("click", () => {
+  var now = new Date();
   var hh = now.getHours();
   var mm = now.getMinutes();
   var nowTime = hh + ':' + mm;
