@@ -1,0 +1,68 @@
+.input-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .input-wrapper input {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .input-wrapper input::-moz-placeholder {
+    color: #999;
+  }
+  .input-wrapper input::placeholder {
+    color: #999;
+  }
+  .input-wrapper input:not(:-moz-placeholder-shown) + span {
+    inset: -0.4rem auto auto 1rem;
+    font-size: 0.8rem;
+    color: #666;
+    background-color: #fff;
+  }
+  .input-wrapper input:not(:placeholder-shown) + span, .input-wrapper input:focus + span {
+    inset: -0.4rem auto auto 1rem;
+    font-size: 0.8rem;
+    color: #666;
+    background-color: #fff;
+  }
+  .input-wrapper span {
+    position: absolute;
+    inset: 1rem auto auto 1rem;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .checkbox label{
+        padding: 10px;
+  }
+  .button {
+    position: relative;
+    text-align: center;
+    width: 200px;
+    border: solid 1px #666;
+    background-color: #5865F252;
+    transform: skewX(25deg);
+    margin: auto;
+  }
+  .button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: #5865F2;
+    z-index: -1;
+    transition: scale .4s ease;
+    scale: 0 1;
+    transform-origin: right;
+  }
+  .button:hover::before {
+    scale: 1;
+    transform-origin: left;
+  }
+  .button-text{
+    transform: skewX(-25deg);
+    font-weight: bold;
+    color: #fff;
+  }
+  /*# sourceMappingURL=form.css.map */

@@ -1,0 +1,63 @@
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    input {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    &::placeholder {
+        color: #999;
+    }
+
+    &:not(:placeholder-shown) + span,
+    &:focus + span {
+        inset: -0.4rem auto auto 1rem ;
+        font-size: 0.8rem;
+        color: #666;
+        background-color: #fff;
+    }
+    }
+
+    span {
+        position: absolute;
+        inset: 1rem auto auto 1rem;
+        color: #999;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+}
+.checkbox{
+    label{
+        padding: 10px;
+    }
+}
+.button {
+    position: relative;
+    align-items: center;
+    width: 200px;
+    border: solid 1px #666;
+    background-color: #5865f286;
+    transform: skewX(25deg);
+    margin: auto;
+}
+.button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: #5865F2;;
+    z-index: -1;
+    transition: scale .4s ease;
+    scale: 0 1;
+    transform-origin: right;
+}
+.button:hover::before {
+    scale: 1;
+    transform-origin: left;
+}
+.button-text{
+    transform: skewX(-25deg);
+    font-weight: bold;
+    color: #fff;
+}
